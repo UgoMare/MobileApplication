@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic) UIImage *imageTaken;
+
+@property (nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 

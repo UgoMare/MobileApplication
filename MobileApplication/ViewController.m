@@ -24,4 +24,17 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    if (self.imageTaken != nil)
+    {
+        self.imageView.image = self.imageTaken;
+        self.imageView.contentMode = UIViewContentModeScaleAspectFill;
+    }
+}
+
+-(IBAction)takePicture:(id)sender
+{
+    [self performSegueWithIdentifier:@"takePicture" sender:self];
+}
 @end
