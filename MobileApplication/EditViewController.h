@@ -10,7 +10,7 @@
 
 @interface EditViewController : UIViewController
 
-@property (nonatomic) UIImage *imageToEdit;
+@property (nonatomic) NSInteger index;
 @property (nonatomic) IBOutlet UIImageView *imageView;
 
 @end

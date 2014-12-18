@@ -18,16 +18,19 @@
 @implementation ViewController
 {
     AppDelegate *appDelegate;
-    UIImage *imageForEditing;
+    NSInteger index;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    imageForEditing = [[UIImage alloc] init];
     appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
     [self.collectionView registerNib:[UINib nibWithNibName:@"MobileCollectionViewCell" bundle:nil] forCellWithReuseIdentifier:@"cell"];
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -92,8 +95,7 @@
 
 -(void) collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-   imageForEditing = [appDelegate.pictures objectAtIndex:indexPath.row];
-    
+    index = indexPath.row;
     [self performSegueWithIdentifier:@"showPictureDetail" sender:self];
     
 }
@@ -106,8 +108,7 @@
         
         EditViewController *editVc = [segue destinationViewController];
         
-        editVc.imageToEdit = [[UIImage alloc]init];
-        editVc.imageToEdit = imageForEditing;
+        editVc.index = index;
         
         
     }

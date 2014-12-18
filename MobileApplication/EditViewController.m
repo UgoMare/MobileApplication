@@ -7,20 +7,32 @@
 //
 
 #import "EditViewController.h"
+#import "AppDelegate.h"
 
 @interface EditViewController ()
 
 @end
 
 @implementation EditViewController
-
+{
+    AppDelegate *appDelegate;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
     
-    self.imageView.image = self.imageToEdit;
+    self.imageView.image = [appDelegate.pictures objectAtIndex:self.index];
     // Do any additional setup after loading the view.
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
+-(IBAction)goBack:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

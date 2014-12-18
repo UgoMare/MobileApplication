@@ -29,6 +29,10 @@
     // Do any additional setup after loading the view.
 }
 
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -46,10 +50,10 @@
         [_imagePicker setDelegate:self];
         if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeCamera]) {
             _imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
-            _imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceFront;
+            _imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
             _imagePicker.showsCameraControls = NO;
             _imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
-            _imagePicker.allowsEditing = YES;
+            _imagePicker.allowsEditing = NO;
             
             diff = 0; //(self.view.frame.size.height - self.view.frame.size.width / 3 * 4)/2;
             
@@ -74,6 +78,11 @@
     UIView *overlayView = [[UIView alloc] init];
     
     overlayView.frame =  _imagePicker.cameraOverlayView.frame;
+//    [overlayView setBackgroundColor:[UIColor colorWithRed:9 green:116 blue:184 alpha:1]];
+    
+
+    
+    [self addGoToLibraryButton:[UIImage imageNamed:@"gallery-button.png"] toView:overlayView];
     
     _imagePicker.cameraOverlayView = overlayView;
 }
@@ -119,11 +128,9 @@
     }
     goToLibrary.layer.cornerRadius = 5;
     goToLibrary.layer.masksToBounds = YES;
-    goToLibrary.layer.borderWidth = 1;
-    goToLibrary.layer.borderColor = [UIColor whiteColor].CGColor;
     [goToLibrary addTarget:self action:@selector(switchCameraSourceType) forControlEvents:UIControlEventTouchUpInside];
     float topPos = 380 + (self.view.frame.size.height - 380)/2 - 44/2 + diff;
-    [goToLibrary setFrame:CGRectMake(20, topPos, 44, 44)];
+    [goToLibrary setFrame:CGRectMake(20, topPos, 60, 60)];
     goToLibrary.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
     
     for (UIView *subView in cameraOverlayView.subviews) {

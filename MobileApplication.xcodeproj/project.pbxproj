@@ -18,11 +18,13 @@
 		B36749071A4327A9006054F6 /* bttn-take-picture.png in Resources */ = {isa = PBXBuildFile; fileRef = B36749051A4327A9006054F6 /* bttn-take-picture.png */; };
 		B36749081A4327A9006054F6 /* cancel-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B36749061A4327A9006054F6 /* cancel-button.png */; };
 		B367490C1A4327DF006054F6 /* filters-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B367490B1A4327DF006054F6 /* filters-button.png */; };
+		B367490E1A432A67006054F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B367490D1A432A67006054F6 /* Default-568h@2x.png */; };
+		B36749101A432C16006054F6 /* gallery-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B367490F1A432C16006054F6 /* gallery-button.png */; };
+		B36749121A432FAD006054F6 /* arrow-nav-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B36749111A432FAD006054F6 /* arrow-nav-white.png */; };
 		BDACC0D693675298EE1D90D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 757162F79DD39B29271ED34C /* libPods.a */; };
 		EC1186331A39E1A1007FD53F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1186321A39E1A1007FD53F /* main.m */; };
 		EC1186391A39E1A1007FD53F /* MobileApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC1186371A39E1A1007FD53F /* MobileApplication.xcdatamodeld */; };
 		EC1186411A39E1A1007FD53F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1186401A39E1A1007FD53F /* Images.xcassets */; };
-		EC1186441A39E1A1007FD53F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EC1186421A39E1A1007FD53F /* LaunchScreen.xib */; };
 		EC1186501A39E1A1007FD53F /* MobileApplicationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = EC11864F1A39E1A1007FD53F /* MobileApplicationTests.m */; };
 /* End PBXBuildFile section */
 
@@ -55,12 +57,14 @@
 		B36749051A4327A9006054F6 /* bttn-take-picture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bttn-take-picture.png"; sourceTree = "<group>"; };
 		B36749061A4327A9006054F6 /* cancel-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancel-button.png"; sourceTree = "<group>"; };
 		B367490B1A4327DF006054F6 /* filters-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "filters-button.png"; sourceTree = "<group>"; };
+		B367490D1A432A67006054F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		B367490F1A432C16006054F6 /* gallery-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gallery-button.png"; sourceTree = "<group>"; };
+		B36749111A432FAD006054F6 /* arrow-nav-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-nav-white.png"; sourceTree = "<group>"; };
 		EC11862D1A39E1A1007FD53F /* MobileApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1186311A39E1A1007FD53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1186321A39E1A1007FD53F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		EC1186381A39E1A1007FD53F /* MobileApplication.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MobileApplication.xcdatamodel; sourceTree = "<group>"; };
 		EC1186401A39E1A1007FD53F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		EC1186431A39E1A1007FD53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EC1186491A39E1A1007FD53F /* MobileApplicationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MobileApplicationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC11864E1A39E1A1007FD53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC11864F1A39E1A1007FD53F /* MobileApplicationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MobileApplicationTests.m; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		EC1186241A39E1A1007FD53F = {
 			isa = PBXGroup;
 			children = (
+				B367490D1A432A67006054F6 /* Default-568h@2x.png */,
 				B3210C7C1A39F07800203565 /* ImageIO.framework */,
 				EC11862F1A39E1A1007FD53F /* MobileApplication */,
 				EC11864C1A39E1A1007FD53F /* MobileApplicationTests */,
@@ -134,14 +139,13 @@
 				B36748F71A432738006054F6 /* ViewController.m */,
 				B36748F21A43271B006054F6 /* Main.storyboard */,
 				B36748FA1A432744006054F6 /* CameraOverlayViewController.h */,
+				B36748FB1A432744006054F6 /* CameraOverlayViewController.m */,
 				B36748FD1A4327A1006054F6 /* EditViewController.h */,
 				B36748FE1A4327A1006054F6 /* EditViewController.m */,
 				B36748FF1A4327A1006054F6 /* MobileCollectionViewCell.h */,
 				B36749001A4327A1006054F6 /* MobileCollectionViewCell.m */,
 				B36749011A4327A1006054F6 /* MobileCollectionViewCell.xib */,
-				B36748FB1A432744006054F6 /* CameraOverlayViewController.m */,
 				EC1186401A39E1A1007FD53F /* Images.xcassets */,
-				EC1186421A39E1A1007FD53F /* LaunchScreen.xib */,
 				EC1186371A39E1A1007FD53F /* MobileApplication.xcdatamodeld */,
 				EC1186301A39E1A1007FD53F /* Supporting Files */,
 			);
@@ -151,7 +155,9 @@
 		EC1186301A39E1A1007FD53F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B36749111A432FAD006054F6 /* arrow-nav-white.png */,
 				B367490B1A4327DF006054F6 /* filters-button.png */,
+				B367490F1A432C16006054F6 /* gallery-button.png */,
 				B36749051A4327A9006054F6 /* bttn-take-picture.png */,
 				B36749061A4327A9006054F6 /* cancel-button.png */,
 				EC1186311A39E1A1007FD53F /* Info.plist */,
@@ -228,6 +234,7 @@
 				TargetAttributes = {
 					EC11862C1A39E1A1007FD53F = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = GASSKSEXDM;
 					};
 					EC1186481A39E1A1007FD53F = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -260,11 +267,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B36749071A4327A9006054F6 /* bttn-take-picture.png in Resources */,
+				B36749121A432FAD006054F6 /* arrow-nav-white.png in Resources */,
 				B36749041A4327A1006054F6 /* MobileCollectionViewCell.xib in Resources */,
 				B36748F31A43271B006054F6 /* Main.storyboard in Resources */,
-				EC1186441A39E1A1007FD53F /* LaunchScreen.xib in Resources */,
 				B367490C1A4327DF006054F6 /* filters-button.png in Resources */,
+				B367490E1A432A67006054F6 /* Default-568h@2x.png in Resources */,
 				EC1186411A39E1A1007FD53F /* Images.xcassets in Resources */,
+				B36749101A432C16006054F6 /* gallery-button.png in Resources */,
 				B36749081A4327A9006054F6 /* cancel-button.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -343,17 +352,6 @@
 			targetProxy = EC11864A1A39E1A1007FD53F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		EC1186421A39E1A1007FD53F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EC1186431A39E1A1007FD53F /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		EC1186511A39E1A1007FD53F /* Debug */ = {
@@ -437,7 +435,9 @@
 			baseConfigurationReference = ECC339141594FDE6C0F0050C /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Antoine LA (DT5VND858D)";
 				INFOPLIST_FILE = MobileApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -449,7 +449,9 @@
 			baseConfigurationReference = 8B6183AD184EE682A7F4CB34 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Antoine LA (DT5VND858D)";
 				INFOPLIST_FILE = MobileApplication/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
