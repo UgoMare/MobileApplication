@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AppDelegate.h"
 #import "CameraOverlayViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
@@ -17,11 +18,14 @@
 @implementation CameraOverlayViewController
 {
     float diff;
+    AppDelegate *appDelegate;
 }
 #define GO_TO_LIBRARY_TAG 99
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+
     // Do any additional setup after loading the view.
 }
 
@@ -166,7 +170,7 @@
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     
-        [self SetImageTakenForSegue:info];
+    [self SetImageTakenForSegue:info];
     
 }
 
@@ -197,10 +201,7 @@
 
 -(void) setupImageForFilters
 {
-    ViewController *viewController = [self.navigationController.viewControllers objectAtIndex:[self.navigationController.viewControllers count]-2];
-    viewController.imageTaken = self.imageTaken;
-    
-    
+    [appDelegate.pictures addObject:self.imageTaken];
     [self.navigationController popViewControllerAnimated:YES];
     [_imagePicker dismissViewControllerAnimated:YES completion:nil];
 
