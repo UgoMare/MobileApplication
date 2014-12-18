@@ -30,7 +30,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MA4-ql-dqk" userLabel="MODIFY FILTER BUTTON">
                                 <rect key="frame" x="214" y="579" width="80" height="80"/>
                                 <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="cancel-button.png">
+                                <state key="normal" image="filters-button.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -173,5 +173,6 @@
     <resources>
         <image name="bttn-take-picture.png" width="154" height="154"/>
         <image name="cancel-button.png" width="107" height="107"/>
+        <image name="filters-button.png" width="107" height="107"/>
     </resources>
 </document>
