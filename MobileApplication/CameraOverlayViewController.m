@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "AppDelegate.h"
 #import "CameraOverlayViewController.h"
+#import "FiltersViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 
 @interface CameraOverlayViewController ()
@@ -19,11 +20,15 @@
 {
     float diff;
     AppDelegate *appDelegate;
+    UIButton *flashmodeButton;
+    ALAssetsLibrary* library;
 }
 #define GO_TO_LIBRARY_TAG 99
+#define SHOW_FILTERS_TAG  98
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    library = [[ALAssetsLibrary alloc] init];
     appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
 
     // Do any additional setup after loading the view.
@@ -80,44 +85,75 @@
     overlayView.frame =  _imagePicker.cameraOverlayView.frame;
 //    [overlayView setBackgroundColor:[UIColor colorWithRed:9 green:116 blue:184 alpha:1]];
     
+    UIView *navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
+    navigationView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.78];
+    
+    
+    UIImage *goBackImg = [UIImage imageNamed:@"arrow-nav-blue.png"];
+    UIButton *goBackButton = [UIButton
+                              buttonWithType:UIButtonTypeCustom];
+    [goBackButton setImage:goBackImg forState:UIControlStateNormal];
+    [goBackButton addTarget:self action:@selector(cancelTakePicture) forControlEvents:UIControlEventTouchUpInside];
+    [goBackButton setFrame:CGRectMake(0, 22, 60, 40)];
+    [goBackButton setImageEdgeInsets:UIEdgeInsetsMake(10,10,10,30)];
+    
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(92, 30, 136, 23)];
+    titleLabel.text = NSLocalizedStringFromTable(@"Take Picture", @"LocalizedStrings", nil);
+    titleLabel.font = [UIFont boldSystemFontOfSize:18];
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    titleLabel.textColor = [UIColor colorWithRed:9/255.0f green:116/255.0f blue:184/255.0f alpha:1];
+    [navigationView addSubview:titleLabel];
+    [navigationView addSubview:goBackButton];
+    
+    UIView *bottomNavigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 380, 320, self.view.frame.size.height - 380)];
+    bottomNavigationView.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.78];
+    
+    [overlayView addSubview:navigationView];
+    [overlayView addSubview:bottomNavigationView];
 
+    
+    UIImage *takePictureImg = [UIImage imageNamed:@"bttn-take-picture.png"];
+    
+    UIButton *takePictureButton = [UIButton
+                                   buttonWithType:UIButtonTypeCustom];
+    [takePictureButton setImage:takePictureImg forState:UIControlStateNormal];
+    [takePictureButton addTarget:self action:@selector(snapPicture) forControlEvents:UIControlEventTouchUpInside];
+    [takePictureButton setFrame:CGRectMake(122, 380 + bottomNavigationView.frame.size.height/2 - 38 + diff, 77, 77)];
+    
+    takePictureButton.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
+    
+    [overlayView addSubview:takePictureButton];
+    
+    UIImage *switchCameraImg = [UIImage imageNamed:@"switch-camera-button.png"];
+    
+    UIButton *switchCameraButton = [UIButton
+                                    buttonWithType:UIButtonTypeCustom];
+    [switchCameraButton setImage:switchCameraImg forState:UIControlStateNormal];
+    [switchCameraButton addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+    [switchCameraButton setFrame:CGRectMake(248, 65, 52, 52)];
+    [switchCameraButton setImageEdgeInsets:UIEdgeInsetsMake(10,10,10,0)];
+    
+    UIImage *flashModeImg = [UIImage imageNamed:@"flash-mode-button.png"];
+    UIImage *noFlashModeImg = [UIImage imageNamed:@"no-flash-mode-button.png"];
+    
+    flashmodeButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [flashmodeButton setImage:noFlashModeImg forState:UIControlStateNormal];
+   [flashmodeButton setImage:flashModeImg forState:UIControlStateSelected];
+    [flashmodeButton addTarget:self action:@selector(flashMode) forControlEvents:UIControlEventTouchUpInside];
+    [flashmodeButton setFrame:CGRectMake(20, 75, 15, 34)];
+    
+    
+    [overlayView addSubview:switchCameraButton];
+    [overlayView addSubview:flashmodeButton];
     
     [self addGoToLibraryButton:[UIImage imageNamed:@"gallery-button.png"] toView:overlayView];
-    
-    _imagePicker.cameraOverlayView = overlayView;
+       _imagePicker.cameraOverlayView = overlayView;
 }
 
 
--(void) addLastPictureFromLibrary {
-    ALAssetsLibrary *assetsLibrary = [[ALAssetsLibrary alloc] init];
-    [assetsLibrary enumerateGroupsWithTypes:ALAssetsGroupSavedPhotos
-                                 usingBlock:^(ALAssetsGroup *group, BOOL *stop) {
-                                     if (nil != group) {
-                                         [group setAssetsFilter:[ALAssetsFilter allPhotos]];
-                                         
-                                         if(group.numberOfAssets > 0) {
-                                             [group enumerateAssetsAtIndexes:[NSIndexSet indexSetWithIndex:group.numberOfAssets - 1]
-                                                                     options:0
-                                                                  usingBlock:^(ALAsset *result, NSUInteger index, BOOL *stop) {
-                                                                      if (nil != result) {
-                                                                          ALAssetRepresentation *repr = [result defaultRepresentation];
-                                                                          // this is the most recent saved photo
-                                                                          UIImage *img = [UIImage imageWithCGImage:[repr fullResolutionImage]];
-                                                                          [self addGoToLibraryButton:img toView:_imagePicker.cameraOverlayView];
-                                                                          // we only need the first (most recent) photo -- stop the enumeration
-                                                                          *stop = YES;
-                                                                      }
-                                                                  }];
-                                         }
-                                     }
-                                     
-                                     *stop = NO;
-                                 } failureBlock:^(NSError *error) {
-                                     NSLog(@"error: %@", error);
-                                 }];
-    
-    
-}
+
+
+
 
 -(void)addGoToLibraryButton:(UIImage *)img toView:(UIView *)cameraOverlayView {
     UIButton *goToLibrary = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -129,7 +165,7 @@
     goToLibrary.layer.cornerRadius = 5;
     goToLibrary.layer.masksToBounds = YES;
     [goToLibrary addTarget:self action:@selector(switchCameraSourceType) forControlEvents:UIControlEventTouchUpInside];
-    float topPos = 380 + (self.view.frame.size.height - 380)/2 - 44/2 + diff;
+    float topPos = 375 + (self.view.frame.size.height - 380)/2 - 44/2 + diff;
     [goToLibrary setFrame:CGRectMake(20, topPos, 60, 60)];
     goToLibrary.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin;
     
@@ -140,6 +176,11 @@
     [cameraOverlayView addSubview:goToLibrary];
 }
 
+
+
+
+
+
 - (void)switchCamera
 {
     if (_imagePicker.cameraDevice == UIImagePickerControllerCameraDeviceRear)
@@ -149,6 +190,19 @@
     else
     {
         _imagePicker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
+    }
+}
+
+-(void)flashMode
+{
+    if (_imagePicker.cameraFlashMode == UIImagePickerControllerCameraFlashModeOff)
+    {
+        _imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOn;
+        [flashmodeButton setSelected:YES];
+    }
+    else {
+        _imagePicker.cameraFlashMode = UIImagePickerControllerCameraFlashModeOff;
+        [flashmodeButton setSelected:NO];
     }
 }
 
@@ -202,17 +256,79 @@
     
     [self setupImageForFilters];
     
-    [self.navigationController popViewControllerAnimated:YES];
-    [_imagePicker dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (UIImage *)squareCropImage:(UIImage *)sourceImage ToSideLength:(CGFloat)sideLength
+{
+    // input size comes from image
+    CGSize inputSize = sourceImage.size;
+    
+    // round up side length to avoid fractional output size
+    sideLength = ceilf(sideLength);
+    
+    // output size has sideLength for both dimensions
+    CGSize outputSize = CGSizeMake(sideLength, sideLength);
+    
+    // calculate scale so that smaller dimension fits sideLength
+    CGFloat scale = MAX(sideLength / inputSize.width,
+                        sideLength / inputSize.height);
+    
+    // scaling the image with this scale results in this output size
+    CGSize scaledInputSize = CGSizeMake(inputSize.width * scale,
+                                        inputSize.height * scale);
+    
+    // determine point in center of "canvas"
+    CGPoint center = CGPointMake(outputSize.width/2.0,
+                                 outputSize.height/2.0);
+    
+    // calculate drawing rect relative to output Size
+    CGRect outputRect = CGRectMake(center.x - scaledInputSize.width/2.0,
+                                   center.y - scaledInputSize.height/2.0,
+                                   scaledInputSize.width,
+                                   scaledInputSize.height);
+    
+    // begin a new bitmap context, scale 0 takes display scale
+    UIGraphicsBeginImageContextWithOptions(outputSize, YES, 0);
+    
+    // optional: set the interpolation quality.
+    // For this you need to grab the underlying CGContext
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    CGContextSetInterpolationQuality(ctx, kCGInterpolationHigh);
+    
+    // draw the source image into the calculated rect
+    [sourceImage drawInRect:outputRect];
+    
+    // create new image from bitmap context
+    UIImage *outImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    // clean up
+    UIGraphicsEndImageContext();
+    
+    // pass back new image
+    return outImage;
+}
+
 
 -(void) setupImageForFilters
 {
-    [appDelegate.pictures addObject:self.imageTaken];
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    self.imageTaken = [self squareCropImage:self.imageTaken ToSideLength:375];
+    [self performSegueWithIdentifier:@"addFilters" sender:nil];
     [_imagePicker dismissViewControllerAnimated:YES completion:nil];
 
 }
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([segue.identifier isEqualToString:@"addFilters"]) {
+        
+        FiltersViewController *filtersVc = [segue destinationViewController];
+        
+        filtersVc.originalImage = self.imageTaken;
+    }
+}
+
+
 
 
 /*

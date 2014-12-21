@@ -109,6 +109,7 @@
         EditViewController *editVc = [segue destinationViewController];
         
         editVc.index = index;
+        NSLog(@"index %zd", index);
         
         
     }

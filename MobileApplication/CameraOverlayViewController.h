@@ -7,13 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GPUImage.h>
 
-@interface CameraOverlayViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface CameraOverlayViewController : UIViewController <UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (nonatomic) UIImagePickerController *imagePicker;
 
 @property (nonatomic) IBOutlet UIView *overlayView;
 @property (nonatomic) IBOutlet UIButton *takePictureButton;
-@property (nonatomic) IBOutlet UIImage *imageTaken;
+@property (nonatomic) UIImage *imageTaken;
 
 @end

@@ -1,0 +1,16 @@
+/* 
+  LocalizedStrings.strings
+  MobileApplication
+
+  Created by Leo Martin on 12/19/14.
+  Copyright (c) 2014 Epitech. All rights reserved.
+*/
+
+"Cancel" = "Cancel";
+
+"No filter" = "No filter";
+
+"Retro" = "Retro movie filter";
+"Sepia" = "Sepia filter";
+"Used" = "Used filter";
+"Take Picture" = "Take Picture";

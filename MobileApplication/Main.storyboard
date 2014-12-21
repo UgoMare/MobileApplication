@@ -18,31 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vdy-9x-78C">
-                                <rect key="frame" x="0.0" y="70" width="375" height="605"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjN-xS-gSv" userLabel="DELETE BUTTON">
-                                <rect key="frame" x="56" y="579" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="8aC-fc-upG"/>
-                                    <constraint firstAttribute="height" constant="80" id="sGU-fM-qMs"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="cancel-button.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MA4-ql-dqk" userLabel="MODIFY FILTER BUTTON">
-                                <rect key="frame" x="239" y="579" width="80" height="80"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="MLd-ln-M6i"/>
-                                    <constraint firstAttribute="width" constant="80" id="cfr-E0-Lvc"/>
-                                </constraints>
-                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
-                                <state key="normal" image="filters-button.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyMobileApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nU7-2u-KB2">
                                 <rect key="frame" x="99" y="20" width="177" height="42"/>
                                 <constraints>
@@ -67,31 +42,35 @@
                                     <action selector="goBack:" destination="L6z-OF-Zhh" eventType="touchUpInside" id="Oxy-9C-VbI"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vdy-9x-78C">
+                                <rect key="frame" x="0.0" y="124" width="375" height="375"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GjN-xS-gSv" userLabel="DELETE BUTTON">
+                                <rect key="frame" x="147" y="530" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="8aC-fc-upG"/>
+                                    <constraint firstAttribute="height" constant="80" id="sGU-fM-qMs"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="cancel-button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.035294117649999998" green="0.4549019608" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="MA4-ql-dqk" secondAttribute="trailing" constant="40" id="2hh-UC-HvD"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="vdy-9x-78C" secondAttribute="bottom" constant="-8" id="7tt-Xd-xmn"/>
                             <constraint firstItem="nU7-2u-KB2" firstAttribute="top" secondItem="TAI-od-R4K" secondAttribute="bottom" id="8IB-3G-cd2"/>
                             <constraint firstItem="tCA-Hz-sfI" firstAttribute="top" secondItem="TAI-od-R4K" secondAttribute="bottom" constant="1" id="8ph-ar-d9M"/>
-                            <constraint firstItem="vdy-9x-78C" firstAttribute="top" secondItem="tCA-Hz-sfI" secondAttribute="bottom" constant="9" id="Ff0-U9-vTn"/>
+                            <constraint firstItem="vdy-9x-78C" firstAttribute="top" secondItem="nU7-2u-KB2" secondAttribute="bottom" constant="62" id="8qV-6q-qhs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vdy-9x-78C" secondAttribute="trailing" constant="-16" id="AX2-w4-KfU"/>
                             <constraint firstItem="tCA-Hz-sfI" firstAttribute="leading" secondItem="l4Q-tt-Kbm" secondAttribute="leadingMargin" id="K4K-jK-RjM"/>
-                            <constraint firstItem="vdy-9x-78C" firstAttribute="centerX" secondItem="nU7-2u-KB2" secondAttribute="centerX" id="LHk-1d-SMd"/>
                             <constraint firstItem="nU7-2u-KB2" firstAttribute="leading" secondItem="l4Q-tt-Kbm" secondAttribute="leadingMargin" constant="83" id="PSU-ei-pd4"/>
                             <constraint firstAttribute="trailingMargin" secondItem="nU7-2u-KB2" secondAttribute="trailing" constant="83" id="TMZ-50-dB0"/>
-                            <constraint firstItem="vdy-9x-78C" firstAttribute="leading" secondItem="l4Q-tt-Kbm" secondAttribute="leading" id="aZp-zT-h0z"/>
                             <constraint firstItem="GjN-xS-gSv" firstAttribute="leading" secondItem="l4Q-tt-Kbm" secondAttribute="leadingMargin" constant="40" id="djo-hd-8mV"/>
-                            <constraint firstItem="pG2-lB-ibb" firstAttribute="top" secondItem="MA4-ql-dqk" secondAttribute="bottom" constant="8" id="jJM-9k-3Se"/>
-                            <constraint firstItem="pG2-lB-ibb" firstAttribute="top" secondItem="GjN-xS-gSv" secondAttribute="bottom" constant="8" id="rpC-QQ-bn4"/>
-                            <constraint firstItem="vdy-9x-78C" firstAttribute="top" secondItem="nU7-2u-KB2" secondAttribute="bottom" constant="8" id="vn7-eV-Jbh"/>
-                            <constraint firstItem="vdy-9x-78C" firstAttribute="top" secondItem="nU7-2u-KB2" secondAttribute="bottom" constant="8" symbolic="YES" id="ziK-wn-HRR"/>
+                            <constraint firstItem="pG2-lB-ibb" firstAttribute="top" relation="lessThanOrEqual" secondItem="vdy-9x-78C" secondAttribute="bottom" constant="168" id="q2i-rJ-vFd"/>
+                            <constraint firstItem="pG2-lB-ibb" firstAttribute="top" secondItem="GjN-xS-gSv" secondAttribute="bottom" constant="74" id="rpC-QQ-bn4"/>
+                            <constraint firstItem="vdy-9x-78C" firstAttribute="leading" secondItem="l4Q-tt-Kbm" secondAttribute="leadingMargin" constant="-16" id="wYW-MG-YYd"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ff0-U9-vTn"/>
-                                <exclude reference="vn7-eV-Jbh"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
@@ -167,7 +146,7 @@
                                     <constraint firstAttribute="height" constant="80" id="CGP-GM-hhf"/>
                                     <constraint firstAttribute="width" constant="80" id="ux7-ox-nWC"/>
                                 </constraints>
-                                <state key="normal" image="bttn-take-picture.png">
+                                <state key="normal" image="bttn-take-picture-plus.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -211,10 +190,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="g4d-az-nMF" kind="show" identifier="addFilters" id="6kf-A5-K7V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbe-x0-onA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-29" y="350"/>
+            <point key="canvasLocation" x="72.5" y="325.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xrj-Fg-c4d">
@@ -233,10 +215,91 @@
             </objects>
             <point key="canvasLocation" x="-1072.5" y="349.5"/>
         </scene>
+        <!--Filters View Controller-->
+        <scene sceneID="wxw-d5-Rxr">
+            <objects>
+                <viewController id="g4d-az-nMF" customClass="FiltersViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bue-tG-CkS"/>
+                        <viewControllerLayoutGuide type="bottom" id="M5U-4f-PBT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="OXe-mH-PwF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bbl-4i-6He" userLabel="FILTERS BUTTON">
+                                <rect key="frame" x="147" y="576" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="cFa-fy-Agw"/>
+                                    <constraint firstAttribute="height" constant="80" id="shq-pl-zGt"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="filters-button.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addFilter:" destination="g4d-az-nMF" eventType="touchUpInside" id="Prb-GA-8ng"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MyMobileApp" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P67-tc-2BD">
+                                <rect key="frame" x="99" y="20" width="177" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="W7q-B5-z7i"/>
+                                    <constraint firstAttribute="width" constant="177" id="wcQ-Cq-PA9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyQ-QU-AiW">
+                                <rect key="frame" x="16" y="21" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Vb3-uu-EG0"/>
+                                    <constraint firstAttribute="height" constant="40" id="exP-BP-0D8"/>
+                                </constraints>
+                                <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="arrow-nav-white.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goBack:" destination="g4d-az-nMF" eventType="touchUpInside" id="N3Y-MZ-qb8"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vL6-Y4-Uga">
+                                <rect key="frame" x="0.0" y="70" width="375" height="375"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="gu0-r0-GHE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.035294117649999998" green="0.4549019608" blue="0.72156862749999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bbl-4i-6He" firstAttribute="leading" secondItem="OXe-mH-PwF" secondAttribute="leadingMargin" constant="131" id="6Dp-IB-j2v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vL6-Y4-Uga" secondAttribute="trailing" constant="-16" id="AJ1-0b-gJ2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="P67-tc-2BD" secondAttribute="trailing" constant="83" id="AKn-JB-aJC"/>
+                            <constraint firstItem="vL6-Y4-Uga" firstAttribute="leading" secondItem="OXe-mH-PwF" secondAttribute="leadingMargin" constant="-16" id="DXN-i9-jBb"/>
+                            <constraint firstItem="M5U-4f-PBT" firstAttribute="top" secondItem="bbl-4i-6He" secondAttribute="bottom" constant="11" id="FBM-7E-uaI"/>
+                            <constraint firstItem="vL6-Y4-Uga" firstAttribute="top" secondItem="P67-tc-2BD" secondAttribute="bottom" constant="8" id="MGd-Uq-19x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bbl-4i-6He" secondAttribute="trailing" constant="132" id="b4g-5I-kOP"/>
+                            <constraint firstItem="RyQ-QU-AiW" firstAttribute="top" secondItem="bue-tG-CkS" secondAttribute="bottom" constant="1" id="cB3-lv-sun"/>
+                            <constraint firstItem="P67-tc-2BD" firstAttribute="leading" secondItem="OXe-mH-PwF" secondAttribute="leadingMargin" constant="83" id="f6Q-CM-wHU"/>
+                            <constraint firstItem="RyQ-QU-AiW" firstAttribute="leading" secondItem="OXe-mH-PwF" secondAttribute="leadingMargin" id="fay-O1-rlc"/>
+                            <constraint firstItem="P67-tc-2BD" firstAttribute="top" secondItem="bue-tG-CkS" secondAttribute="bottom" id="muq-ka-YsD"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="previewImg" destination="vL6-Y4-Uga" id="7eS-QP-JsB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8su-R6-7bZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="533.5" y="325.5"/>
+        </scene>
     </scenes>
     <resources>
         <image name="arrow-nav-white.png" width="40" height="40"/>
-        <image name="bttn-take-picture.png" width="154" height="154"/>
+        <image name="bttn-take-picture-plus.png" width="154" height="154"/>
         <image name="cancel-button.png" width="107" height="107"/>
         <image name="filters-button.png" width="107" height="107"/>
     </resources>
