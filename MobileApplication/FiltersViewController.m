@@ -17,23 +17,21 @@
 @implementation FiltersViewController
 {
     UIImage *output;
+    AppDelegate *appDelegate;
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     output = self.originalImage;
     self.previewImg.image = output;
+    appDelegate = (AppDelegate*)[[UIApplication sharedApplication] delegate];
+
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(IBAction)goBack:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(IBAction)addFilter:(id)sender
@@ -49,6 +47,7 @@
                                                     otherButtonTitles:
                                   NSLocalizedStringFromTable(@"Sepia", @"LocalizedStrings", nil),
                                   NSLocalizedStringFromTable(@"Used", @"LocalizedStrings", nil),
+                                    NSLocalizedStringFromTable(@"Black & White", @"LocalizedStrings", nil),
                                   NSLocalizedStringFromTable(@"No filter", @"LocalizedStrings", nil),nil];
     
     
@@ -62,8 +61,9 @@
 {
     if (0 == buttonIndex) [self sepiaFilter];
     if (1 == buttonIndex) [self usedFilter];
-    if (2 == buttonIndex) [self noFilter];
-    if (3 == buttonIndex) return; // it's the cancel button
+    if (2 == buttonIndex) [self bwFilter];
+    if (3 == buttonIndex) [self noFilter];
+    if (4 == buttonIndex) return; // it's the cancel button
 }
 
 
@@ -80,11 +80,30 @@
     output = self.previewImg.image;
 }
 
+
+-(void)bwFilter
+{
+    self.previewImg.image = [self.originalImage CIPhotoEffectNoir];
+    output = self.previewImg.image;
+}
 -(void) usedFilter{
     self.previewImg.image = [self.originalImage vintageFilter];
     
     output = self.previewImg.image;
 }
+
+-(IBAction)doneWithPicture:(id)sender
+{
+    [appDelegate.pictures addObject:output];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        UIImageWriteToSavedPhotosAlbum(output, nil, nil, nil);
+        
+    });
+
+    [self.navigationController popToRootViewControllerAnimated:YES];
+}
+
 /*
  
  

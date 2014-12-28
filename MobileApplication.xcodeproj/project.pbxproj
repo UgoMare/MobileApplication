@@ -22,7 +22,6 @@
 		B32FA3D61A475BC800BE3A84 /* ALAssetsLibrary+CustomPhotoAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = B32FA3D51A475BC800BE3A84 /* ALAssetsLibrary+CustomPhotoAlbum.m */; };
 		B32FA3DE1A4766F100BE3A84 /* FiltersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B32FA3DD1A4766F100BE3A84 /* FiltersViewController.m */; };
 		B32FA3E11A47679800BE3A84 /* UIImage+Filters.m in Sources */ = {isa = PBXBuildFile; fileRef = B32FA3E01A47679800BE3A84 /* UIImage+Filters.m */; };
-		B32FA3E91A476EDC00BE3A84 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B32FA3E81A476EDC00BE3A84 /* paper.jpg */; };
 		B36748F31A43271B006054F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B36748F21A43271B006054F6 /* Main.storyboard */; };
 		B36748F81A432738006054F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B36748F51A432738006054F6 /* AppDelegate.m */; };
 		B36748F91A432738006054F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36748F71A432738006054F6 /* ViewController.m */; };
@@ -32,6 +31,8 @@
 		B36749041A4327A1006054F6 /* MobileCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B36749011A4327A1006054F6 /* MobileCollectionViewCell.xib */; };
 		B367490E1A432A67006054F6 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B367490D1A432A67006054F6 /* Default-568h@2x.png */; };
 		B36749121A432FAD006054F6 /* arrow-nav-white.png in Resources */ = {isa = PBXBuildFile; fileRef = B36749111A432FAD006054F6 /* arrow-nav-white.png */; };
+		B391140A1A50926E0008D5C0 /* paper.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B39114091A50926E0008D5C0 /* paper.jpg */; };
+		B391140E1A5095540008D5C0 /* done-button.png in Resources */ = {isa = PBXBuildFile; fileRef = B391140D1A5095540008D5C0 /* done-button.png */; };
 		BDACC0D693675298EE1D90D8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 757162F79DD39B29271ED34C /* libPods.a */; };
 		EC1186331A39E1A1007FD53F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EC1186321A39E1A1007FD53F /* main.m */; };
 		EC1186391A39E1A1007FD53F /* MobileApplication.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC1186371A39E1A1007FD53F /* MobileApplication.xcdatamodeld */; };
@@ -72,7 +73,6 @@
 		B32FA3DD1A4766F100BE3A84 /* FiltersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FiltersViewController.m; sourceTree = "<group>"; };
 		B32FA3DF1A47679800BE3A84 /* UIImage+Filters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Filters.h"; sourceTree = "<group>"; };
 		B32FA3E01A47679800BE3A84 /* UIImage+Filters.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Filters.m"; sourceTree = "<group>"; };
-		B32FA3E81A476EDC00BE3A84 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
 		B36748F21A43271B006054F6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B36748F41A432738006054F6 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B36748F51A432738006054F6 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -87,6 +87,8 @@
 		B36749011A4327A1006054F6 /* MobileCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MobileCollectionViewCell.xib; sourceTree = "<group>"; };
 		B367490D1A432A67006054F6 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B36749111A432FAD006054F6 /* arrow-nav-white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-nav-white.png"; sourceTree = "<group>"; };
+		B39114091A50926E0008D5C0 /* paper.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = paper.jpg; sourceTree = "<group>"; };
+		B391140D1A5095540008D5C0 /* done-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "done-button.png"; sourceTree = "<group>"; };
 		EC11862D1A39E1A1007FD53F /* MobileApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MobileApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1186311A39E1A1007FD53F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EC1186321A39E1A1007FD53F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -136,6 +138,32 @@
 			path = "ALAssetsLibrary-CustomPhotoAlbum";
 			sourceTree = "<group>";
 		};
+		B391140B1A5093A60008D5C0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B36748F61A432738006054F6 /* ViewController.h */,
+				B36748F71A432738006054F6 /* ViewController.m */,
+				B36748FA1A432744006054F6 /* CameraOverlayViewController.h */,
+				B36748FB1A432744006054F6 /* CameraOverlayViewController.m */,
+				B36748FD1A4327A1006054F6 /* EditViewController.h */,
+				B36748FE1A4327A1006054F6 /* EditViewController.m */,
+				B36748FF1A4327A1006054F6 /* MobileCollectionViewCell.h */,
+				B36749001A4327A1006054F6 /* MobileCollectionViewCell.m */,
+				B32FA3DC1A4766F100BE3A84 /* FiltersViewController.h */,
+				B32FA3DD1A4766F100BE3A84 /* FiltersViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B391140C1A5093AE0008D5C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B36748F21A43271B006054F6 /* Main.storyboard */,
+				B36749011A4327A1006054F6 /* MobileCollectionViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		C8AC5A80E02B8C09C60384E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,18 +209,8 @@
 			children = (
 				B36748F41A432738006054F6 /* AppDelegate.h */,
 				B36748F51A432738006054F6 /* AppDelegate.m */,
-				B36748F61A432738006054F6 /* ViewController.h */,
-				B36748F71A432738006054F6 /* ViewController.m */,
-				B36748F21A43271B006054F6 /* Main.storyboard */,
-				B36748FA1A432744006054F6 /* CameraOverlayViewController.h */,
-				B36748FB1A432744006054F6 /* CameraOverlayViewController.m */,
-				B36748FD1A4327A1006054F6 /* EditViewController.h */,
-				B36748FE1A4327A1006054F6 /* EditViewController.m */,
-				B36748FF1A4327A1006054F6 /* MobileCollectionViewCell.h */,
-				B32FA3DC1A4766F100BE3A84 /* FiltersViewController.h */,
-				B32FA3DD1A4766F100BE3A84 /* FiltersViewController.m */,
-				B36749001A4327A1006054F6 /* MobileCollectionViewCell.m */,
-				B36749011A4327A1006054F6 /* MobileCollectionViewCell.xib */,
+				B391140B1A5093A60008D5C0 /* Controllers */,
+				B391140C1A5093AE0008D5C0 /* Views */,
 				EC1186401A39E1A1007FD53F /* Images.xcassets */,
 				EC1186371A39E1A1007FD53F /* MobileApplication.xcdatamodeld */,
 				EC1186301A39E1A1007FD53F /* Supporting Files */,
@@ -203,13 +221,14 @@
 		EC1186301A39E1A1007FD53F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B32FA3E81A476EDC00BE3A84 /* paper.jpg */,
+				B39114091A50926E0008D5C0 /* paper.jpg */,
 				B32FA3DF1A47679800BE3A84 /* UIImage+Filters.h */,
 				B32FA3E01A47679800BE3A84 /* UIImage+Filters.m */,
 				B32FA3D31A475BC800BE3A84 /* ALAssetsLibrary-CustomPhotoAlbum */,
 				B32FA3AB1A446B1A00BE3A84 /* Localized Files */,
 				B36749111A432FAD006054F6 /* arrow-nav-white.png */,
 				B32FA3C51A44788500BE3A84 /* flash-mode-button.png */,
+				B391140D1A5095540008D5C0 /* done-button.png */,
 				B32FA3C61A44788500BE3A84 /* no-flash-mode-button.png */,
 				B32FA3C71A44788500BE3A84 /* switch-camera-button.png */,
 				B32FA3B71A44729C00BE3A84 /* bttn-take-picture.png */,
@@ -325,10 +344,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B32FA3E91A476EDC00BE3A84 /* paper.jpg in Resources */,
+				B391140A1A50926E0008D5C0 /* paper.jpg in Resources */,
 				B32FA3C91A44788500BE3A84 /* no-flash-mode-button.png in Resources */,
 				B36749121A432FAD006054F6 /* arrow-nav-white.png in Resources */,
 				B36749041A4327A1006054F6 /* MobileCollectionViewCell.xib in Resources */,
+				B391140E1A5095540008D5C0 /* done-button.png in Resources */,
 				B36748F31A43271B006054F6 /* Main.storyboard in Resources */,
 				B32FA3C81A44788500BE3A84 /* flash-mode-button.png in Resources */,
 				B32FA3D01A447B2300BE3A84 /* filters-button.png in Resources */,

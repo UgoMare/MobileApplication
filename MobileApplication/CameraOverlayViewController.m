@@ -312,7 +312,7 @@
 -(void) setupImageForFilters
 {
     
-    self.imageTaken = [self squareCropImage:self.imageTaken ToSideLength:375];
+    self.imageTaken = [self squareCropImage:self.imageTaken ToSideLength:320];
     [self performSegueWithIdentifier:@"addFilters" sender:nil];
     [_imagePicker dismissViewControllerAnimated:YES completion:nil];
 
